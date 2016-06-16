@@ -26,7 +26,8 @@ public class Main
         Tutorials tuts = new Tutorials();
         try
         {
-            tuts.showCombined1Heightfield(256);
+            tuts.showSimpleHeightfield("tutorial1.bmp", 256);
+            tuts.showCombined1Heightfield("tutorial2.bmp", 256);
         }
         catch (ExceptionInvalidParam exceptionInvalidParam)
         {

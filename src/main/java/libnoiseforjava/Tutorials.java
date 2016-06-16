@@ -40,7 +40,7 @@ public class Tutorials
     private RendererImage renderer = null;
     private ImageCafe image = null;
 
-    public void showSimpleHeightfield(int size) throws ExceptionInvalidParam
+    public void showSimpleHeightfield(String fileName, int size) throws ExceptionInvalidParam
     {
         Perlin myModule = new Perlin();
         heightMap = new NoiseMap(size, size);
@@ -66,11 +66,11 @@ public class Tutorials
         renderer.enableLight(true);
         renderer.setLightContrast(3.0); // Triple the contrast
         renderer.setLightBrightness(2.0); // Double the brightness
-        renderer.render ();
-        showGeneratedImage();
+        renderer.render();
+        showGeneratedImage(fileName);
     }
 
-    public void showCombined1Heightfield(int size) throws ExceptionInvalidParam
+    public void showCombined1Heightfield(String fileName, int size) throws ExceptionInvalidParam
     {
         RidgedMulti myModule = new RidgedMulti();
         Billow baseFlatTerrain = new Billow();
@@ -112,14 +112,14 @@ public class Tutorials
         renderer.setLightContrast(3.0); // Triple the contrast
         renderer.setLightBrightness(2.0); // Double the brightness
         renderer.render();
-        showGeneratedImage();
+        showGeneratedImage(fileName);
     }
 
-    public void showGeneratedImage()
+    public void showGeneratedImage(String fileName)
     {
         WriterBMP writer = new WriterBMP();
         writer.setSourceImage(image);
-        writer.setDestFilename("tutorial.bmp");
+        writer.setDestFilename(fileName);
         try
         {
             writer.writeDestFile();
