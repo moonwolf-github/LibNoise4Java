@@ -179,6 +179,6 @@ public class WriterBMP
 
     private int UnpackLittle16(int integer)
     {
-        return ((integer & 0x00ff) << 8) | (integer & 0xff00);
+        return ((integer & 0x00ff) << 8) | ((integer & 0xff00) >> 8);
     }
 }
